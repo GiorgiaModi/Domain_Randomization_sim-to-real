@@ -1,48 +1,48 @@
-# Starting code for course project of Robot Learning - 01HFNOV
+# Domain Randomization for Sim-to-Real Transfer
 
-Official assignment at [Google Doc](https://docs.google.com/document/d/1yA9Ta4rWlh2YcRfhtbeJp0TpS-2nUsKK8-wpp3iEj0M/edit?usp=sharing)
+## Project Overview
 
+This project explores domain randomization techniques to improve the robustness of reinforcement learning (RL) policies for sim-to-real transfer. The study focuses on environments like Hopper and Walker2d from OpenAI Gym, employing various domain randomization strategies to evaluate their impact on policy generalization.
 
-### NB TO USE COLAB
-access tools->command palette->use fallback runtime environment
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fe9d7513-ff8c-4efa-911d-0719e5983248" width="30%">
+</p>
 
-This is due to the fact that colab update the runtime environment to a newer version that is not compatible with the current version of mujoco-py
+## Repository Contents
 
-## Getting started
+- **`env/`**: Contains environment configurations and customizations.
+- **`models/`**: Stores trained RL models.
+- **`plots/`**: Includes scripts and results for visualizing performance metrics.
+- **`videos/`**: Contains videos demonstrating policy performance.
+- **`paper_RL_project_Delli_Modi_Necerini.pdf`**: The comprehensive report detailing the project's methodology, experiments, and findings.
+- **`project_Robot_Learning.ipynb`**: Jupyter notebook with code implementations and experiment results.
+- **`readme.md`**: Project documentation (this file).
+- **`requirements.txt`**: List of dependencies required to run the project.
 
-Before starting to implement your own code, make sure to:
-1. read and study the material provided (see Section 1 of the assignment)
-2. read the documentation of the main packages you will be using ([mujoco-py](https://github.com/openai/mujoco-py), [Gym](https://github.com/openai/gym), [stable-baselines3](https://stable-baselines3.readthedocs.io/en/master/index.html))
-3. play around with the code in the template to familiarize with all the tools. Especially with the `test_random_policy.py` script.
+If you use the Jupyter notebook (`project_Robot_Learning.ipynb`), all required dependencies will be installed automatically. Simply run the notebook to set up your environment. All the examples of usage are provided in the notebook.
 
+Detailed experimental results, including performance comparisons of different randomization strategies, are presented in the report paper_RL_project_Delli_Modi_Necerini.pdf.
 
-### 1. Local (Linux)
+### Contributors
 
-if you have a Linux system, you can work on the course project directly on your local machine. By doing so, you will also be able to render the Mujoco Hopper environment and visualize what is happening. This code has been tested on Linux with python 3.7.
+- Andrea Delli ([Politecnico di Torino](https://www.polito.it))
+- Giorgia Modi ([Politecnico di Torino](https://www.polito.it))
+- Ivan Necerini ([Politecnico di Torino](https://www.polito.it))
 
-**Dependencies**
-- Install MuJoCo and the Python Mujoco interface following the instructions here: https://github.com/openai/mujoco-py
-- Run `pip install -r requirements.txt` to further install `gym` and `stable-baselines3`.
+### Citation
 
-Check your installation by launching `python test_random_policy.py`.
+If you use this project in your research, please cite:
 
+```bibtex
+@article{DelliModiNecerini2024,
+  title={Domain Randomization Techniques for Reinforcement Learning: Bridging the Reality Gap},
+  author={Andrea Delli, Giorgia Modi, Ivan Necerini},
+  year={2024},
+  institution={Politecnico di Torino}
+}
+```
 
-### 2. Local (Windows)
-As the latest version of `mujoco-py` is not compatible for Windows explicitly, you may:
-- Try installing WSL2 (requires fewer resources) or a full Virtual Machine to run Linux on Windows. Then you can follow the instructions above for Linux.
-- (not recommended) Try downloading a [previous version](https://github.com/openai/mujoco-py/blob/9ea9bb000d6b8551b99f9aa440862e0c7f7b4191/) of `mujoco-py`.
-- (not recommended) Stick to the Google Colab template (see below), which runs on the browser regardless of the operating system. This option, however, will not allow you to render the environment in an interactive window for debugging purposes.
+### License
 
-
-### 3. Google Colab
-
-You can also run the code on [Google Colab](https://colab.research.google.com/)
-
-- Download all files contained in the `colab_template` folder in this repo.
-- Load the `test_random_policy.ipynb` file on [https://colab.research.google.com/](colab) and follow the instructions on it
-
-NOTE 1: rendering is currently **not** officially supported on Colab, making it hard to see the simulator in action. We recommend that each group manages to play around with the visual interface of the simulator at least once, to best understand what is going on with the underlying Hopper environment.
-
-NOTE 2: you need to stay connected to the Google Colab interface at all times for your python scripts to keep training.
-
+This project is licensed under the MIT License.
 
